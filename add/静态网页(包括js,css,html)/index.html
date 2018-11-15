@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <style type="text/css">
+            div {
+ 
+                font-weight:bold;    
+                font-family: Microsoft Yahei;
+                width: 400px;
+                padding-left: 50px;
+                margin-left: 450px;
+            }
+ 
+            h1 {
+                text-align: center;
+            }
+ 
+            #sub {
+                background-color: #689;
+                width: 250px;
+                height: 30px;
+                color:white;
+                font-weight: bold;
+            }
+            body {
+                background-image: url("http://pic.qiantucdn.com/58pic/20/13/88/25r58PICqQa_1024.jpg");
+            }
+        </style>
+        <script type="text/javascript">
+            function abc()
+            {
+                if (document.getElementById("name").value == "")
+                {
+                    alert("Please write your name!");
+                    form.myname.focus();
+                    return false;
+                }
+                if (document.getElementById("passward").value == "")
+                {
+                    alert("Please write your password!");
+                    form.mypassward.focus();
+                    return false;
+                }
+                if (document.getElementById("profile").value == "")
+                {
+                    alert("please write your profile!");
+                    form.profile.focus();
+                    return false;
+                }
+            }
+ 
+ 
+        </script>
+ 
+    </head>
+ 
+    <body>
+        <div id="sign">
+            <h1>Sigh Up</h1></br>
+            <h2>Your basic info</h2>
+            <form>
+                <strong>Name:</strong>
+                <input type="text" name="myname" id="name"/></br>
+                </br>
+ 
+                <strong>Passward:</strong>
+                <input type="password" name="mypassward" id="passward"/></br>
+                </br>
+ 
+                <strong>Age:</strong></br>
+                <input type="radio" name="age" value="1" checked="checked"/>Under 13</br>
+                <input type="radio" name="age" value="2" />13 or older</br>
+                </br>
+ 
+                <strong>Your profile:</strong></br>
+                <textarea cols="50" rows="4" name="profile" id="profile"></textarea></br>
+                </br>
+ 
+                <strong>Job Role:</strong></br>
+                <select>
+                    <option value="Front-End Developer" selected="selected" name="job">Front-End Developer</option>
+                    <option value="Back-End Developer" name="job">Back-End Developer</option>
+                </select></br>
+                </br>
+ 
+                <strong>Interests:</strong></br>
+                <input type="checkbox" name="development" value="1" checked="checked">Development</br>
+                <input type="checkbox" name="design" value="2" >Design</br>
+                <input type="checkbox" name="business" value="3" >Business</br>
+                </br>
+ 
+                <input type="submit" name="Sign Up" value="Sign Up" id="sub" onclick="abc()">
+                </input>
+            </form>
+        </div>
+    </body>
+</html>
