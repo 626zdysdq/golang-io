@@ -1,12 +1,5 @@
----
-title: GO语言处理web程序的输入输出
-data: 2018-11-14 23:55:59
-tags:
-    - 服务计算
-    - Go语言
-    - web service
-    
----
+# GO语言处理web程序的输入输出
+
 
 ## 概述
 设计一个 web 小应用，展示静态文件服务、js 请求支持、模板输出、表单处理、Filter 中间件设计等方面的能力。（不需要数据库支持）
@@ -17,7 +10,6 @@ tags:
 3. 提交表单，并输出一个表格
 4. 对 `/unknown` 给出开发中的提示，返回码 `5xx`
 
-<!--more-->
 
 ## 服务器的工作原理
 
@@ -108,7 +100,7 @@ mx.HandleFunc("/unknown", NotImplemented).Methods("GET")
 
 其实现效果如下：
 
-![路由规则](https://github.com/626zdysdq/golang-io/blob/master/picture/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-11-16%20%E4%B8%8A%E5%8D%8812.03.27.png)
+![路由规则](https://github.com/626zdysdq/golang-io/blob/master/picture/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-11-16%20%E4%B8%8A%E5%8D%8812.03.27.png?raw=true)
 
 
 
@@ -182,6 +174,7 @@ func (srv *Server) ListenAndServe() error {
 
 #### 服务器的终端显示
 
-![console]()
+![console](https://github.com/626zdysdq/golang-io/blob/master/picture/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-11-16%20%E4%B8%8B%E5%8D%887.19.49.png?raw=true)
+
 
 [源代码地址](https://github.com/626zdysdq/golang-io)

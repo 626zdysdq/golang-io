@@ -33,11 +33,13 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 			//`fmt.Println(root)
 		}
 	}
-	mx.HandleFunc("/api/test", apiTestHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/unknown", NotImplemented).Methods("GET")
+	//实现对静态文件和js的引用
+	mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/add/"))))
+	//表单提交与访问
 	mx.HandleFunc("/", home).Methods("GET")
 	mx.HandleFunc("/", login).Methods("POST")
+	//unknown的错误显示
+	mx.HandleFunc("/unknown", NotImplemented).Methods("GET")
+	mx.HandleFunc("/api/test", apiTestHandler(formatter)).Methods("GET")
 
-	/*实现对css/js/images的引用*/
-	mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/add/"))))
 }
